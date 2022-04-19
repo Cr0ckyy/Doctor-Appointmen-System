@@ -1,0 +1,3 @@
+/home/crocky/CLionProjects/DoctorAppointmentSystem/cmake-build-debug/CMakeFiles/DoctorAppointmentSystem.dir
+/home/crocky/CLionProjects/DoctorAppointmentSystem/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/crocky/CLionProjects/DoctorAppointmentSystem/cmake-build-debug/CMakeFiles/rebuild_cache.dir

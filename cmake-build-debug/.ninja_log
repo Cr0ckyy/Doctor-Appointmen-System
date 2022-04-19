@@ -1,0 +1,10 @@
+# ninja log v5
+2	168	1650353331445783304	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Person.cpp.o	2062a7e8171adfe2
+1	206	1650353331485785132	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Medicine.cpp.o	f1cd180e7c6f546b
+1	228	1650353331505786045	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Message.cpp.o	bc45e9e29397e24b
+1	265	1650353331545787873	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Patient.cpp.o	553424f2e43adab0
+1	392	1650353331669793538	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/DoctorAppointment.cpp.o	aaa69c9fa51879c7
+1	445	1650353331721795914	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Doctor.cpp.o	7190912bec8efbb2
+445	513	1650353331789799021	DoctorAppointmentSystem	e146a1478c23d042
+0	395	1650359862618893247	CMakeFiles/DoctorAppointmentSystem.dir/DoctorAppointment/Doctor.cpp.o	7190912bec8efbb2
+395	458	1650359862678894220	DoctorAppointmentSystem	e146a1478c23d042
