@@ -17,7 +17,7 @@ public:
 
     Message(int id, string content, Patient snder, string sentAt);
 
-    int getID();
+    int getID() const;
 
     string getContent();
 

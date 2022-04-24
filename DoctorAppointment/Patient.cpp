@@ -3,23 +3,28 @@
 #include "Medicine.h";
 #include <string>
 #include <list>
+#include <utility>
 
 Patient::Patient() :
         Address("No Address"), Person(0, "No Name", "No Name") {
 }
 
 Patient::Patient(int id, string firstName, string lastName, string address) :
-        Address(address), Person(id, firstName, lastName) {
+        Address(std::move(address)), Person(id, std::move(firstName), std::move(lastName)) {
 }
 
-Patient::Patient(int id, string firstName, string lastName, string address, string username, string password) :
-        Address(address), Person(id, firstName, lastName), Username(username), Password(password) {
+Patient::Patient(int id, string firstName, string lastName, string address,
+                 string username, string password) :
+        Address(std::move(address)), Person(id, std::move(firstName), std::move(lastName)),
+        Username(std::move(username)), Password(std::move(password)) {
 }
 
 Patient::Patient(int id, string firstName, string lastName, string address, string username, string password,
                  string dateOfHisReservation) :
-        Address(address), Person(id, firstName, lastName), Username(username), Password(password),
-        DateOfHisReservation(dateOfHisReservation) {
+        Address(std::move(address)), Person(id, std::move(firstName),
+                                            std::move(lastName)), Username(std::move(username)),
+        Password(std::move(password)),
+        DateOfHisReservation(std::move(dateOfHisReservation)) {
 }
 
 string Patient::getAddress() {
@@ -44,8 +49,8 @@ list<Medicine> &Patient::getListOfMedicine() {
 
 
 void Patient::setUsernameAndPassword(string username, string password) {
-    this->Username = username;
-    this->Password = password;
+    this->Username = std::move(username);
+    this->Password = std::move(password);
 }
 
 
@@ -55,10 +60,10 @@ void Patient::reverseDate(int day, int month, int year) {
 }
 
 void Patient::setListOfMedicine(list<Medicine> list) {
-    this->Medicines = list;
+    this->Medicines = std::move(list);
 }
 
-void Patient::addMedicineToList(Medicine medicine) {
+void Patient::addMedicineToList(const Medicine& medicine) {
     this->Medicines.push_front(medicine);
 }
 

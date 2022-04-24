@@ -16,12 +16,12 @@ public:
 
     Medicine(int id, string name, string description, double price, int timesPerDay);
 
-    int getID();
+    int getID() const;
 
     string getName();
 
-    double getPrice();
+    double getPrice() const;
 
-    int getTimesPerDay();
+    int getTimesPerDay() const;
 };
 

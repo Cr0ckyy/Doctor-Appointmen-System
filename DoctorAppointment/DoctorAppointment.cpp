@@ -5,12 +5,11 @@
 #include <iostream>
 #include <list>
 #include <ctime>
-#include <iterator>
 #include <algorithm>
-#include "Patient.h";
-#include "Message.h";
-#include "Medicine.h";
-#include "Doctor.h";
+#include "Patient.h"//;
+#include "Message.h"//;
+#include "Medicine.h"//;
+#include "Doctor.h"//;
 
 using namespace std;
 
@@ -26,7 +25,7 @@ int main() {
     cout << "2- Login as a Patient \n";
     cin >> login;
 
-    Doctor dr1(1, "mohamed", "abdelrahman", "mohamed@yahoo.com", "01154321101");
+    Doctor dr1(1, "Walter", "White", "WalterWhite@breakingbad.com", "5254312321");
 
     switch (login) {
         case 1:

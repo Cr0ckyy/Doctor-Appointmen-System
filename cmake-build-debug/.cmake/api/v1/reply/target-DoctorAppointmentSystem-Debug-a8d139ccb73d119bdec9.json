@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "DoctorAppointmentSystem"
+			"path" : "DoctorAppointmentSystem.exe"
+		},
+		{
+			"path" : "DoctorAppointmentSystem.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -52,7 +55,7 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/crocky/CLionProjects/DoctorAppointmentSystem/DoctorAppointment"
+					"path" : "C:/Users/LI SHUFANG/CLionProjects/Doctor-Appointmen-System/DoctorAppointment"
 				}
 			],
 			"language" : "CXX",
@@ -87,12 +90,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "DoctorAppointmentSystem",
-	"nameOnDisk" : "DoctorAppointmentSystem",
+	"nameOnDisk" : "DoctorAppointmentSystem.exe",
 	"paths" : 
 	{
 		"build" : ".",

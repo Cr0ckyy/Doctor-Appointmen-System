@@ -1,5 +1,5 @@
-#include "Person.h";
-#include "Medicine.h";
+#include "Person.h"//;
+#include "Medicine.h"//;
 #include <string>
 #include <list>
 
@@ -41,6 +41,6 @@ public:
 
     void setListOfMedicine(list<Medicine> list);
 
-    void addMedicineToList(Medicine medicine);
+    void addMedicineToList(const Medicine& medicine);
 };
 

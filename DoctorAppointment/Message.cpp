@@ -1,13 +1,15 @@
 #include "Message.h"
 
+#include <utility>
+
 Message::Message() : ID(0), Content("No Message"), SentAt("0000000") {
 }
 
 Message::Message(int id, string content, Patient snder, string sentAt) :
-        ID(id), Content(content), Sender(snder), SentAt(sentAt) {
+        ID(id), Content(std::move(content)), Sender(std::move(snder)), SentAt(std::move(sentAt)) {
 }
 
-int Message::getID() {
+int Message::getID() const {
     return this->ID;
 }
 

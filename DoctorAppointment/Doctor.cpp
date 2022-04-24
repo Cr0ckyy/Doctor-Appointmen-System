@@ -2,65 +2,68 @@
 #include "Medicine.h"
 #include <list>
 #include <ctime>
+#include <utility>
 
 #pragma warning(disable : 4996) //_CRT_SECURE_NO_WARNINGS
 
-Doctor::Doctor() : Email("No Email"), Phone("00000000000000"), Person(0, "No Name", "No Name") {
+Doctor::Doctor() : Email("No Email"), Phone("00000000000000"),
+Person(0, "No Name", "No Name") {
 }
 
 Doctor::Doctor(int id, string firstName, string lastName, string email, string phone) :
-        Email(email), Phone(phone), Person(id, firstName, lastName) {
+        Email(std::move(email)), Phone(std::move(phone)),
+        Person(id, std::move(firstName), std::move(lastName)) {
     // initial patients data
-    Patient p1(1, "Mohamed", "Abdo", "Beni suef", "aboelkassem", "123456789", "21/6/2020");
+    Patient p1(1, "Alex", "Backham", "Mardid", "Alex", "123456789", "21/6/2020");
     p1.addMedicineToList(Medicine(1, "Acetaminophen", "testing description", 12.5, 1));
     p1.addMedicineToList(Medicine(2, "Adderall", "testing description", 12.5, 2));
     p1.addMedicineToList(Medicine(3, "Amitriptyline", "testing description", 12.5, 3));
     p1.addMedicineToList(Medicine(4, "Amlodipine", "testing description", 12.5, 4));
     p1.addMedicineToList(Medicine(5, "Lisinopril", "testing description", 12.5, 2));
 
-    Patient p2(2, "ahmed", "mohamed", "Cairo", "ahmed000", "123456789", "1/6/2020");
+    Patient p2(2, "Jack", "Alex", "London", "Jack000", "123456789", "1/6/2020");
     p2.addMedicineToList(Medicine(6, "Levothyroxine", "testing description", 12.5, 2));
     p2.addMedicineToList(Medicine(7, "Amlodipine", "testing description", 12.5, 2));
     p2.addMedicineToList(Medicine(8, "Metformin Hydrochloride", "testing description", 12.5, 2));
     p2.addMedicineToList(Medicine(9, "Simvastatin", "testing description", 12.5, 2));
     p2.addMedicineToList(Medicine(10, "Gabapentin", "testing description", 12.5, 2));
 
-    Patient p3(3, "ali", "ahmed", "Naser", "ali011", "123456789", "3/6/2020");
+    Patient p3(3, "Cindy", "Jack", "Jack", "Cindy011", "123456789", "3/6/2020");
     p3.addMedicineToList(Medicine(11, "Hydrochlorothiazide", "testing description", 12.5, 2));
-    p3.addMedicineToList(Medicine(12, "Sertraline Hydrochloride", "testing description", 12.5, 2));
+    p3.addMedicineToList(Medicine(12, "SertrCindyne Hydrochloride", "testing description", 12.5, 2));
     p3.addMedicineToList(Medicine(13, "Montelukast", "testing description", 12.5, 2));
     p3.addMedicineToList(Medicine(14, "Prednisone", "testing description", 12.5, 2));
     p3.addMedicineToList(Medicine(15, "Pravastatin Sodium", "testing description", 12.5, 2));
 
-    Patient p4(4, "sara", "Abdo", "Alex", "sara", "123456789", "5/6/2020");
+    Patient p4(4, "Penny", "Backham", "Alex", "Penny", "123456789", "5/6/2020");
     p4.addMedicineToList(Medicine(1, "Acetaminophen", "testing description", 12.5, 2));
     p4.addMedicineToList(Medicine(2, "Carvedilol", "testing description", 12.5, 2));
     p4.addMedicineToList(Medicine(3, "Pravastatin Sodium", "testing description", 12.5, 2));
     p4.addMedicineToList(Medicine(4, "Tramadol Hydrochloride", "testing description", 12.5, 2));
     p4.addMedicineToList(Medicine(5, "Clonazepam", "testing description", 12.5, 2));
 
-    Patient p5(5, "esraa", "mahmoud", "mansoura", "esraa", "123456789", "16/6/2020");
+    Patient p5(5, "Elisa", "Jackson", "Teaxs", "Elisa", "123456789", "16/6/2020");
     p5.addMedicineToList(Medicine(1, "Clopidogrel Bisulfate", "testing description", 12.5, 2));
     p5.addMedicineToList(Medicine(2, "Aspirin", "testing description", 12.5, 2));
     p5.addMedicineToList(Medicine(3, "Cyclobenzaprine", "testing description", 12.5, 2));
     p5.addMedicineToList(Medicine(4, "Glipizide", "testing description", 12.5, 2));
     p5.addMedicineToList(Medicine(5, "Hydrochlorothiazide; Lisinopril", "testing description", 12.5, 2));
 
-    Patient p6(6, "hussien", "hassan", "ashmant", "hhsan", "123456789", "4/6/2020");
+    Patient p6(6, "James", "hassan", "Tokyo", "James", "123456789", "4/6/2020");
     p6.addMedicineToList(Medicine(1, "Acetaminophen", "testing description", 12.5, 2));
     p6.addMedicineToList(Medicine(2, "Acetaminophen", "testing description", 12.5, 2));
     p6.addMedicineToList(Medicine(3, "Acetaminophen", "testing description", 12.5, 2));
     p6.addMedicineToList(Medicine(4, "Acetaminophen", "testing description", 12.5, 2));
     p6.addMedicineToList(Medicine(5, "Acetaminophen", "testing description", 12.5, 2));
 
-    Patient p7(7, "mahmoud", "ali", "Beni suef", "mahmoudali", "123456789", "10/6/2020");
+    Patient p7(7, "Jackson", "Cindy", "Mardid", "JacksonCindy", "123456789", "10/6/2020");
     p7.addMedicineToList(Medicine(1, "Acetaminophen", "testing description", 12.5, 2));
     p7.addMedicineToList(Medicine(2, "Acetaminophen", "testing description", 12.5, 2));
     p7.addMedicineToList(Medicine(3, "Acetaminophen", "testing description", 12.5, 2));
     p7.addMedicineToList(Medicine(4, "Acetaminophen", "testing description", 12.5, 2));
     p7.addMedicineToList(Medicine(5, "Acetaminophen", "testing description", 12.5, 2));
 
-    Patient p8(8, "shimaa", "mohamed", "banha", "shosho", "123456789", "9/6/2020");
+    Patient p8(8, "Shape", "Alex", "California", "Aiden", "123456789", "9/6/2020");
     p8.addMedicineToList(Medicine(1, "Acetaminophen", "testing description", 12.5, 2));
     p8.addMedicineToList(Medicine(2, "Acetaminophen", "testing description", 12.5, 2));
     p8.addMedicineToList(Medicine(3, "Acetaminophen", "testing description", 12.5, 2));
